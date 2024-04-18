@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: calc(33% - 20px); /* Adjust for number of reviews per row  */
+}
+
+.review h2 {
+  margin-bottom: 10px;
+}
+
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#review-form label {
+  font-weight: bold;
+}
+
+#review-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+#review-form button {
+  background-color: #01AA97;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

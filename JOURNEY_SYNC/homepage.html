@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking System</title>
+    <link rel="stylesheet" type="text/css" href="./css/homepage.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+   
+    <div class="index container animated zoomIn">
+  
+        <div class="form contactform">
+          
+          <div id="page1">
+            
+            <h1>Book Your Bus Ticket</h1>
+            <div class="index row">
+              <div class="field col-sm-6">
+                
+                <label for="from">From</label>
+                <input id="from" type="text" />
+              </div>
+              <div class="field col-sm-6">
+                <label for="to">To</label>
+                <input id="to" type="text" />
+              </div>
+              <div class="field col-sm-6 col-centered">
+                <label for="datepicker">Date</label>
+                <input id="datepicker" type="text" />
+              </div>
+              <div class="clearfix visible-xs"></div>
+              <div class="field col-sm-6 col-centered ">
+                <div id="search" class="btn  btn-primary">Search for Buses</div>
+              </div>
+            </div>
+          </div>
+        
+          <div id="page2" class="animated zoomInDown">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="table-responsive  text-center">
+                  <table class="table table-bordered table-hover">
+                    <caption class="text-center">Available Buses : </caption>
+                    <thead>
+                      <tr>
+                        <th>Bus No</th>
+                        <th>Bus Name</th>
+                        <th>Time</th>
+                        <th>Cost</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <!--a href="index.html"><button>Book Now</button></a-->
+                        <td colspan='4'><span class="btn btn-danger book"><a href="index.html">Book Now</a> </span></td>
+                      </tr>
+                    </tfoot>
+                    <tbody class="member">
+                      <tr>
+                        <td class="bnum">78654</td>
+                        <td id="busname1" class="bnam"></td>
+                        <td class="btime">04:30 AM</td>
+                        <td class="bcost">₹ 200</td>
+                      </tr>
+                      <tr>
+                        <td class="bnum">54876</td>
+                        <td id="busname2" class="bnam"></td>
+                        <td class="btime">10:15 AM</td>
+                        <td class="bcost">₹ 250</td>
+                      </tr>
+                      <tr>
+                        <td class="bnum">25312</td>
+                        <td id="busname3" class="bnam"></td>
+                        <td class="btime">03:50 PM</td>
+                        <td class="bcost">₹ 300</td>
+                      </tr>
+                      <tr>
+                        <td class="bnum">45698</td>
+                        <td id="busname4" class="bnam"></td>
+                        <td class="btime">09:30 PM</td>
+                        <td class="bcost">₹ 350</td>
+                      </tr>
+                      <tr>
+                        <td class="bnum">95464</td>
+                        <td id="busname5" class="tnam"></td>
+                        <td class="btime">11:15 PM</td>
+                        <td class="bcost">₹ 500</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--<div class="final animated flip">
+        <h2>Here is Your Ticket</h2>
+        <div class="ticket" id="ticket">
+          <div class="row">
+            <div class="col-xs-6 pull-left" id="date"></div>
+            <div class="col-xs-6 pull-right">INDIAN RAILWAYS</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 busno"><span id="number"></span></div>
+            <div class="col-xs-6 busname"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 from">From: <span id="From"></span></div>
+            <div class="col-xs
+      </div>
+    </div>-->
+    <script src=""></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> <!-- Include jQuery UI -->
+    <script src="js/homepage.js"></script>
+   <!-- Link your JavaScript file -->
+</body>
+</html>

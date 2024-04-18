@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bus </title>
+  <style>
+
+.seat {
+      display: inline-block;
+      width: 30px;
+      height: 50px;
+      margin: 5px;
+      background-color: white;
+      border: 2px solid lightgreen;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+    .seat.selected {
+      background-color: lightgreen;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .seat.green {
+      background-color: lightgreen;
+      color: black;
+    }
+    .seat.pink {
+      background-color: pink;
+      color: black;
+    }
+    .seat.gray {
+      background-color: gray;
+      color: white;
+    }
+    .seat.right-align {
+      text-align: right;
+    }
+    .seat {
+      display: inline-block;
+      width: 30px;
+      height: 50px;
+      margin: 5px;
+      background-color:white;
+      border: 2px solid lightgreen;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+    .seat.selected {
+      background-color: lightgreen;
+    }
+    .deck-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .deck {
+      margin: 0 10px;
+      border: 1px solid #000;
+      padding: 10px;
+    }
+    .deck h2 {
+      text-align: center;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+    .left-column {
+      display: flex;
+      flex-direction: column;
+    }
+    .right-columns {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+    }
+    .rate-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .rate {
+      width: 200px;
+      padding: 10px;
+      background-color: lightblue;
+      text-align: center;
+    }
+    .rate h2 {
+      margin-top: 0;
+    }
+    .rate p {
+      margin: 5px 0;
+    }
+    #totalSeats {
+      font-weight: bold;
+    }
+    #totalPrice {
+      font-weight: bold;
+      color: #ff0000;
+    }
+    #continueBtn {
+        width: 250px;
+      margin-top: 0px;
+      padding: 10px 20px;
+      background-color:darkcyan;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #continueBtn:hover {
+      background-color: lightseagreen;
+    }
+    .seat.pink {
+      border: 2px solid pink;
+    }
+    .seat.dark-gray {
+      background-color: #333;
+      color: #fff;
+    }
+    .seat.dark-gray.selected {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bus Travels</h1>
+  
+  <div class="deck-container">
+    <div class="deck">
+      <h2>SEAT</h2>
+      <div class="row">
+        <div class="left-columns">
+            <div class="row">
+                <div class="seat pink">L1</div>
+                <div class="seat pink">L2</div>
+              </div>
+              <div class="row">
+                <div class="seat">L5</div>
+                <div class="seat">L6</div>
+              </div>
+              <div class="row">
+                <div class="seat">L9</div>
+                <div class="seat">L10</div>
+              </div>
+              <div class="row">
+                <div class="seat">L13</div>
+                <div class="seat">L14</div>
+              </div>
+              <div class="row">
+                <div class="seat">L17</div>
+                <div class="seat">L18</div>
+              </div>
+              <div class="row">
+                <div class="seat">L21</div>
+                <div class="seat">L22</div>
+              </div>
+              <div class="row">
+                <div class="seat">L25</div>
+                <div class="seat">L26</div>
+              </div>
+              <div class="row">
+                <div class="seat dark-gray">L29</div>
+                <div class="seat ">L30</div>
+              </div>
+        </div>
+        <div class="right-columns">
+          <div class="row">
+            <div class="seat pink">L3</div>
+            <div class="seat pink">L4</div>
+          </div>
+          <div class="row">
+            <div class="seat">L7</div>
+            <div class="seat">L8</div>
+          </div>
+          <div class="row">
+            <div class="seat">L11</div>
+            <div class="seat">L12</div>
+          </div>
+          <div class="row">
+            <div class="seat">L15</div>
+            <div class="seat">L16</div>
+          </div>
+          <div class="row">
+            <div class="seat">L19</div>
+            <div class="seat">L20</div>
+          </div>
+          <div class="row">
+            <div class="seat">L23</div>
+            <div class="seat">L24</div>
+          </div>
+          <div class="row">
+            <div class="seat">L27</div>
+            <div class="seat">L28</div>
+          </div>
+          <div class="row">
+            <div class="seat dark-gray">L131</div>
+            <div class="seat ">L32</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="rate-container">
+    <button id="continueBtn" onclick="window.location.href = 'index1.html'">Continue</button>
+  </div>
+  <script>
+    const seats = document.querySelectorAll('.seat');
+    const continueBtn = document.getElementById('continueBtn');
+    const totalSeats = document.getElementById('totalSeats');
+    const totalPrice = document.getElementById('totalPrice');
+    const selectedSeatNumbers = document.getElementById('selectedSeatNumbers');
+
+    let selectedSeatCount = 0;
+    let ticketPrice = 0;
+    let selectedSeats = [];
+
+    seats.forEach(seat => {
+      seat.addEventListener('click', () => {
+        const seatNumber = seat.innerText;
+
+        if (seat.classList.contains('dark-gray')) {
+          alert('This seat is already booked. Please select another seat.');
+          return;
+        }
+
+        seat.classList.toggle('selected');
+
+        const seatIndex = selectedSeats.indexOf(seatNumber);
+        if (seatIndex > -1) {
+          selectedSeats.splice(seatIndex, 1);
+        } else {
+          selectedSeats.push(seatNumber);
+        }
+
+        
+        selectedSeatCount = selectedSeats.length;
+        if(selectedSeatCount > 4){
+          alert('limit exceeded')
+        }
+        ticketPrice = selectedSeatCount * 720;
+
+        totalSeats.textContent = selectedSeatCount;
+        totalPrice.textContent = ticketPrice;
+        selectedSeatNumbers.textContent = selectedSeats.join(', ');
+
+        if (selectedSeatCount > 0) {
+          selectedSeatNumbers.style.display = 'block';
+        } else {
+          selectedSeatNumbers.style.display = 'none';
+        }
+      });
+    });
+
+    // continueBtn.addEventListener('click', () => {
+    //   onclick
+    //   if (selectedSeatCount > 0) {
+    //     alert(`Proceed to payment for ${selectedSeatCount} seat(s): ${selectedSeats.join(', ')}. Total Price: $${ticketPrice}`);
+    //     // Add your payment or further processing logic here
+    //   } else {
+    //     alert('Please select at least one seat.');
+    //   }
+      
+    // });
+  </script>
+</body>
+</html> 
